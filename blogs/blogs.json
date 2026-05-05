@@ -1,0 +1,13 @@
+{
+  "repo": "digicert",
+  "feeds": [
+    {
+      "source": "https://www.digicert.com/blog/",
+      "feed_url": "https://www.digicert.com/blog/feed",
+      "saved": 10,
+      "title": "Blog"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:27:08Z"
+}
