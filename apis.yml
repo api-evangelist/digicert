@@ -15,6 +15,8 @@ apis:
     properties:
       - url: https://dev.digicert.com/en/certcentral-apis/services-api.html
         type: Documentation
+      - url: openapi/digicert-openapi.yml
+        type: OpenAPI
     description: >-
       The DigiCert Services API automates certificate processes to save time and
       streamline certificate management across the CertCentral platform. Use this
