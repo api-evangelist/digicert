@@ -121,7 +121,7 @@ common:
     type: Security
   - name: DigiCert Status
     url: https://status.digicert.com/
-    type: Status
+    type: StatusPage
   - name: DigiCert Privacy Policy
     url: https://www.digicert.com/legal-repository/privacy-policy
     type: PrivacyPolicy
