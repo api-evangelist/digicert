@@ -1,0 +1,749 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: DigiCert CertCentral Services API
+  description: 'DigiCert CertCentral Services API. 19 operations. Lead operation: Get account details. Self-contained Naftiko
+    capability covering one Digicert business surface.'
+  tags:
+  - Digicert
+  - DigiCert CertCentral Services API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DIGICERT_API_KEY: DIGICERT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: digicert
+    baseUri: https://www.digicert.com/services/v2
+    description: DigiCert CertCentral Services API business capability. Self-contained, no shared references.
+    resources:
+    - name: account
+      path: /account
+      operations:
+      - name: getaccount
+        method: GET
+        description: Get account details
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: account-authkey
+      path: /account/authkey
+      operations:
+      - name: createauthkey
+        method: POST
+        description: Create authentication key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: account-authkey-id
+      path: /account/authkey/{id}
+      operations:
+      - name: deleteauthkey
+        method: DELETE
+        description: Delete authentication key
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+    - name: account-custom-fields
+      path: /account/custom-fields
+      operations:
+      - name: listcustomfields
+        method: GET
+        description: List custom fields
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcustomfield
+        method: POST
+        description: Create custom field
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: domain
+      path: /domain
+      operations:
+      - name: listdomains
+        method: GET
+        description: List domains
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createdomain
+        method: POST
+        description: Add domain
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: domain-domainId
+      path: /domain/{domainId}
+      operations:
+      - name: getdomain
+        method: GET
+        description: Get domain
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: domainId
+          in: path
+          type: string
+          required: true
+      - name: deletedomain
+        method: DELETE
+        description: Delete domain
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: domainId
+          in: path
+          type: string
+          required: true
+    - name: order
+      path: /order
+      operations:
+      - name: listorders
+        method: GET
+        description: List orders
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: order-certificate
+      path: /order/certificate
+      operations:
+      - name: createcertificateorder
+        method: POST
+        description: Order certificate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: order-certificate-orderId-download
+      path: /order/certificate/{orderId}/download
+      operations:
+      - name: downloadcertificate
+        method: GET
+        description: Download certificate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: orderId
+          in: path
+          type: string
+          required: true
+    - name: order-certificate-orderId-note
+      path: /order/certificate/{orderId}/note
+      operations:
+      - name: getordernotes
+        method: GET
+        description: Get order notes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: orderId
+          in: path
+          type: string
+          required: true
+      - name: addordernote
+        method: POST
+        description: Add note to order
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: orderId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: order-certificate-orderId-revoke
+      path: /order/certificate/{orderId}/revoke
+      operations:
+      - name: revokecertificate
+        method: PUT
+        description: Revoke certificate
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: orderId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: order-orderId
+      path: /order/{orderId}
+      operations:
+      - name: getorder
+        method: GET
+        description: Get order
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: orderId
+          in: path
+          type: string
+          required: true
+    - name: organization
+      path: /organization
+      operations:
+      - name: listorganizations
+        method: GET
+        description: List organizations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createorganization
+        method: POST
+        description: Create organization
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: user
+      path: /user
+      operations:
+      - name: listusers
+        method: GET
+        description: List users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-DC-DEVKEY
+      value: '{{env.DIGICERT_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: digicert-rest
+    port: 8080
+    description: REST adapter for DigiCert CertCentral Services API. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/account
+      name: account
+      description: REST surface for account.
+      operations:
+      - method: GET
+        name: getaccount
+        description: Get account details
+        call: digicert.getaccount
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/account/authkey
+      name: account-authkey
+      description: REST surface for account-authkey.
+      operations:
+      - method: POST
+        name: createauthkey
+        description: Create authentication key
+        call: digicert.createauthkey
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/account/authkey/{id}
+      name: account-authkey-id
+      description: REST surface for account-authkey-id.
+      operations:
+      - method: DELETE
+        name: deleteauthkey
+        description: Delete authentication key
+        call: digicert.deleteauthkey
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/account/custom-fields
+      name: account-custom-fields
+      description: REST surface for account-custom-fields.
+      operations:
+      - method: GET
+        name: listcustomfields
+        description: List custom fields
+        call: digicert.listcustomfields
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createcustomfield
+        description: Create custom field
+        call: digicert.createcustomfield
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/domain
+      name: domain
+      description: REST surface for domain.
+      operations:
+      - method: GET
+        name: listdomains
+        description: List domains
+        call: digicert.listdomains
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createdomain
+        description: Add domain
+        call: digicert.createdomain
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/domain/{domainid}
+      name: domain-domainid
+      description: REST surface for domain-domainId.
+      operations:
+      - method: GET
+        name: getdomain
+        description: Get domain
+        call: digicert.getdomain
+        with:
+          domainId: rest.domainId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletedomain
+        description: Delete domain
+        call: digicert.deletedomain
+        with:
+          domainId: rest.domainId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/order
+      name: order
+      description: REST surface for order.
+      operations:
+      - method: GET
+        name: listorders
+        description: List orders
+        call: digicert.listorders
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/order/certificate
+      name: order-certificate
+      description: REST surface for order-certificate.
+      operations:
+      - method: POST
+        name: createcertificateorder
+        description: Order certificate
+        call: digicert.createcertificateorder
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/order/certificate/{orderid}/download
+      name: order-certificate-orderid-download
+      description: REST surface for order-certificate-orderId-download.
+      operations:
+      - method: GET
+        name: downloadcertificate
+        description: Download certificate
+        call: digicert.downloadcertificate
+        with:
+          orderId: rest.orderId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/order/certificate/{orderid}/note
+      name: order-certificate-orderid-note
+      description: REST surface for order-certificate-orderId-note.
+      operations:
+      - method: GET
+        name: getordernotes
+        description: Get order notes
+        call: digicert.getordernotes
+        with:
+          orderId: rest.orderId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: addordernote
+        description: Add note to order
+        call: digicert.addordernote
+        with:
+          orderId: rest.orderId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/order/certificate/{orderid}/revoke
+      name: order-certificate-orderid-revoke
+      description: REST surface for order-certificate-orderId-revoke.
+      operations:
+      - method: PUT
+        name: revokecertificate
+        description: Revoke certificate
+        call: digicert.revokecertificate
+        with:
+          orderId: rest.orderId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/order/{orderid}
+      name: order-orderid
+      description: REST surface for order-orderId.
+      operations:
+      - method: GET
+        name: getorder
+        description: Get order
+        call: digicert.getorder
+        with:
+          orderId: rest.orderId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organization
+      name: organization
+      description: REST surface for organization.
+      operations:
+      - method: GET
+        name: listorganizations
+        description: List organizations
+        call: digicert.listorganizations
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createorganization
+        description: Create organization
+        call: digicert.createorganization
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/user
+      name: user
+      description: REST surface for user.
+      operations:
+      - method: GET
+        name: listusers
+        description: List users
+        call: digicert.listusers
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: digicert-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for DigiCert CertCentral Services API. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-account-details
+      description: Get account details
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: digicert.getaccount
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-authentication-key
+      description: Create authentication key
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: digicert.createauthkey
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-authentication-key
+      description: Delete authentication key
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: digicert.deleteauthkey
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-custom-fields
+      description: List custom fields
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: digicert.listcustomfields
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-custom-field
+      description: Create custom field
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: digicert.createcustomfield
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-domains
+      description: List domains
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: digicert.listdomains
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: add-domain
+      description: Add domain
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: digicert.createdomain
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-domain
+      description: Get domain
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: digicert.getdomain
+      with:
+        domainId: tools.domainId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: delete-domain
+      description: Delete domain
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: digicert.deletedomain
+      with:
+        domainId: tools.domainId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-orders
+      description: List orders
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: digicert.listorders
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: order-certificate
+      description: Order certificate
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: digicert.createcertificateorder
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: download-certificate
+      description: Download certificate
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: digicert.downloadcertificate
+      with:
+        orderId: tools.orderId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-order-notes
+      description: Get order notes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: digicert.getordernotes
+      with:
+        orderId: tools.orderId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: add-note-order
+      description: Add note to order
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: digicert.addordernote
+      with:
+        orderId: tools.orderId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: revoke-certificate
+      description: Revoke certificate
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: digicert.revokecertificate
+      with:
+        orderId: tools.orderId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-order
+      description: Get order
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: digicert.getorder
+      with:
+        orderId: tools.orderId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-organizations
+      description: List organizations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: digicert.listorganizations
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: create-organization
+      description: Create organization
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: digicert.createorganization
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-users
+      description: List users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: digicert.listusers
+      outputParameters:
+      - type: object
+        mapping: $.
