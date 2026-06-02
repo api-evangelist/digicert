@@ -2,12 +2,20 @@
   "repo": "digicert",
   "feeds": [
     {
-      "source": "https://www.digicert.com/blog/",
+      "source": "https://www.digicert.com/blog/feed",
       "feed_url": "https://www.digicert.com/blog/feed",
-      "title": "Blog",
-      "saved": 46
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
+      "source": "https://www.digicert.com/blog/",
+      "feed_url": "https://www.digicert.com/blog/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 56,
-  "fetched": "2026-05-17T20:48:52Z"
+  "fetched": "2026-06-01T23:35:02Z"
 }
