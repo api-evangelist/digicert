@@ -16,12 +16,11 @@ apis:
     type: Documentation
   - url: openapi/digicert-openapi.yml
     type: OpenAPI
-  - type: NaftikoCapability
-    url: capabilities/digicert.yaml
-  description: The DigiCert Services API automates certificate processes to save time and streamline certificate management
-    across the CertCentral platform. Use this API to manage all aspects of your CertCentral account including order, issue,
-    reissue, renew, and revoke for SSL/TLS, code signing, client, and document signing certificates, as well as user, organization,
-    domain, and product management.
+  description: >-
+    The DigiCert Services API automates certificate processes to save time and streamline certificate management
+    across the CertCentral platform. Use this API to manage all aspects of your CertCentral account including order,
+    issue, reissue, renew, and revoke for SSL/TLS, code signing, client, and document signing certificates, as well as
+    user, organization, domain, and product management.
 - aid: digicert:digicert-report-library-api
   name: DigiCert Report Library API
   tags:
@@ -32,9 +31,10 @@ apis:
   properties:
   - url: https://dev.digicert.com/en/certcentral-apis/report-library-api.html
     type: Documentation
-  description: The DigiCert Report Library API allows users to create and manage custom reports for CertCentral certificate
-    orders, domains, organizations, and account activity. Programmatically schedule, retrieve, and export reports to streamline
-    visibility and auditing of certificate inventories.
+  description: >-
+    The DigiCert Report Library API allows users to create and manage custom reports for CertCentral certificate
+    orders, domains, organizations, and account activity. Programmatically schedule, retrieve, and export reports to
+    streamline visibility and auditing of certificate inventories.
 - aid: digicert:digicert-discovery-api
   name: DigiCert Discovery API
   tags:
@@ -46,9 +46,10 @@ apis:
   properties:
   - url: https://dev.digicert.com/en/certcentral-apis/discovery-api.html
     type: Documentation
-  description: The DigiCert Discovery API enables scanning of internal and public-facing networks using sensors to find SSL/TLS
-    certificates regardless of the issuing Certificate Authority. Use the API to manage scan configurations, sensors, divisions,
-    and the certificates that have been discovered to reduce risk from unknown or expired certificates.
+  description: >-
+    The DigiCert Discovery API enables scanning of internal and public-facing networks using sensors to find SSL/TLS
+    certificates regardless of the issuing Certificate Authority. Use the API to manage scan configurations, sensors,
+    divisions, and the certificates that have been discovered to reduce risk from unknown or expired certificates.
 - aid: digicert:digicert-automation-api
   name: DigiCert Automation API
   tags:
@@ -59,9 +60,10 @@ apis:
   properties:
   - url: https://dev.digicert.com/en/certcentral-apis/automation-api.html
     type: Documentation
-  description: The DigiCert Automation API allows configuration of automation profiles and management of automation activities
-    for certificate lifecycle operations. Access all automation features available in CertCentral programmatically without
-    needing to log in to the platform.
+  description: >-
+    The DigiCert Automation API allows configuration of automation profiles and management of automation activities
+    for certificate lifecycle operations. Access all automation features available in CertCentral programmatically
+    without needing to log in to the platform.
 - aid: digicert:digicert-custom-reports-api
   name: DigiCert Custom Reports API
   tags:
@@ -73,9 +75,12 @@ apis:
   properties:
   - url: https://dev.digicert.com/en/certcentral-apis/custom-reports-api.html
     type: Documentation
-  description: The DigiCert Custom Reports API allows generation of customizable and comprehensive data sets by leveraging
-    the powerful GraphQL query language. Build tailored reporting against CertCentral data sources with flexible filtering,
-    sorting, and field selection.
+  - url: graphql/digicert-graphql.md
+    type: GraphQL
+  description: >-
+    The DigiCert Custom Reports API allows generation of customizable and comprehensive data sets by leveraging the
+    powerful GraphQL query language. Build tailored reporting against CertCentral data sources with flexible
+    filtering, sorting, and field selection.
 name: Digicert
 tags:
 - Certificates
@@ -132,10 +137,11 @@ common:
 created: '2025-01-08'
 modified: '2026-05-19'
 position: Consumer
-description: Digicert is a leading provider of digital security solutions, specializing in SSL/TLS certificates, PKI solutions,
-  and website security. They help organizations of all sizes protect their websites, data, and communications from cyber threats
-  by providing secure encryption and authentication services. Digicert's CertCentral platform exposes a suite of REST and
-  GraphQL APIs for certificate lifecycle management, discovery, automation, and reporting.
+description: >-
+  Digicert is a leading provider of digital security solutions, specializing in SSL/TLS certificates, PKI solutions, and
+  website security. They help organizations of all sizes protect their websites, data, and communications from cyber
+  threats by providing secure encryption and authentication services. Digicert's CertCentral platform exposes a suite of
+  REST and GraphQL APIs for certificate lifecycle management, discovery, automation, and reporting.
 integrations:
 - name: AWS
 - name: F5
