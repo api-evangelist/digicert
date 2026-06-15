@@ -1,0 +1,335 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "DigiCert CertCentral Services API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-DC-DEVKEY",
+      "value": "{{X-DC-DEVKEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Get account details",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://www.digicert.com/services/v2/account"
+      },
+      "docs": "Get account details"
+    },
+    {
+      "info": {
+        "name": "Create authentication key",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://www.digicert.com/services/v2/account/authkey",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create authentication key"
+    },
+    {
+      "info": {
+        "name": "Delete authentication key",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://www.digicert.com/services/v2/account/authkey/:id",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete authentication key"
+    },
+    {
+      "info": {
+        "name": "List custom fields",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://www.digicert.com/services/v2/account/custom-fields"
+      },
+      "docs": "List custom fields"
+    },
+    {
+      "info": {
+        "name": "Create custom field",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://www.digicert.com/services/v2/account/custom-fields",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create custom field"
+    },
+    {
+      "info": {
+        "name": "List orders",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://www.digicert.com/services/v2/order",
+        "params": [
+          {
+            "name": "offset",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List orders"
+    },
+    {
+      "info": {
+        "name": "Get order",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://www.digicert.com/services/v2/order/:orderId",
+        "params": [
+          {
+            "name": "orderId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get order"
+    },
+    {
+      "info": {
+        "name": "Order certificate",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://www.digicert.com/services/v2/order/certificate",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Submit a certificate order request."
+    },
+    {
+      "info": {
+        "name": "Download certificate",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://www.digicert.com/services/v2/order/certificate/:orderId/download",
+        "params": [
+          {
+            "name": "orderId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Download certificate"
+    },
+    {
+      "info": {
+        "name": "Revoke certificate",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://www.digicert.com/services/v2/order/certificate/:orderId/revoke",
+        "params": [
+          {
+            "name": "orderId",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Revoke certificate"
+    },
+    {
+      "info": {
+        "name": "Get order notes",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://www.digicert.com/services/v2/order/certificate/:orderId/note",
+        "params": [
+          {
+            "name": "orderId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get order notes"
+    },
+    {
+      "info": {
+        "name": "Add note to order",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://www.digicert.com/services/v2/order/certificate/:orderId/note",
+        "params": [
+          {
+            "name": "orderId",
+            "value": "",
+            "type": "path"
+          }
+        ],
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Add note to order"
+    },
+    {
+      "info": {
+        "name": "List domains",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://www.digicert.com/services/v2/domain",
+        "params": [
+          {
+            "name": "offset",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "List domains"
+    },
+    {
+      "info": {
+        "name": "Add domain",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://www.digicert.com/services/v2/domain",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Add domain"
+    },
+    {
+      "info": {
+        "name": "Get domain",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://www.digicert.com/services/v2/domain/:domainId",
+        "params": [
+          {
+            "name": "domainId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Get domain"
+    },
+    {
+      "info": {
+        "name": "Delete domain",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://www.digicert.com/services/v2/domain/:domainId",
+        "params": [
+          {
+            "name": "domainId",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete domain"
+    },
+    {
+      "info": {
+        "name": "List organizations",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://www.digicert.com/services/v2/organization"
+      },
+      "docs": "List organizations"
+    },
+    {
+      "info": {
+        "name": "Create organization",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://www.digicert.com/services/v2/organization",
+        "body": {
+          "type": "json",
+          "data": "{}"
+        }
+      },
+      "docs": "Create organization"
+    },
+    {
+      "info": {
+        "name": "List users",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://www.digicert.com/services/v2/user"
+      },
+      "docs": "List users"
+    }
+  ],
+  "bundled": true
+}
