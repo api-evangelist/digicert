@@ -3,19 +3,18 @@
   "feeds": [
     {
       "source": "https://www.digicert.com/blog/feed",
-      "feed_url": "https://www.digicert.com/blog/feed",
-      "title": "",
+      "feed_url": "",
       "saved": 0,
-      "method": "none"
+      "method": "agent-scrape"
     },
     {
       "source": "https://www.digicert.com/blog/",
-      "feed_url": "https://www.digicert.com/blog/",
-      "title": "",
+      "feed_url": "",
       "saved": 0,
-      "method": "none"
+      "method": "agent-scrape"
     }
   ],
   "post_count": 57,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T12:36:25Z",
+  "agent_pulled": "2026-06-27"
 }
