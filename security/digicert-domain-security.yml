@@ -1,0 +1,38 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.digicert.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 25 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: dev.digicert.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 18 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 15724800
+- host: certcentral.digicert.eu
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 24 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+domains:
+- domain: digicert.com
+  dnssec: false
+  caa:
+  - 0 issuewild "digicert.com"
+  - 0 issue "digicert.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: digicert.eu
+  dnssec: false
+  caa:
+  - 0 issuewild "digicert.com"
+  - 0 issue "digicert.com"
+  spf: false
+  dmarc: false
