@@ -1,0 +1,177 @@
+openapi: 3.1.0
+info:
+  title: DigiCert CertCentral Services Account Order API
+  description: DigiCert CertCentral Services API provides programmatic access to certificate lifecycle operations including ordering, validation, revocation, and management of accounts, domains, and organizations.
+  version: '2'
+servers:
+- url: https://www.digicert.com/services/v2
+  description: DigiCert CertCentral Services API (US)
+- url: https://certcentral.digicert.eu/services/v2
+  description: DigiCert CertCentral Services API (EU)
+security:
+- apiKey: []
+tags:
+- name: Order
+paths:
+  /order:
+    get:
+      summary: List orders
+      operationId: listOrders
+      parameters:
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+      tags:
+      - Order
+  /order/{orderId}:
+    get:
+      summary: Get order
+      operationId: getOrder
+      parameters:
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+      tags:
+      - Order
+  /order/certificate:
+    post:
+      summary: Order certificate
+      description: Submit a certificate order request.
+      operationId: createCertificateOrder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '201':
+          description: Order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+      tags:
+      - Order
+  /order/certificate/{orderId}/download:
+    get:
+      summary: Download certificate
+      operationId: downloadCertificate
+      parameters:
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Certificate file
+      tags:
+      - Order
+  /order/certificate/{orderId}/revoke:
+    put:
+      summary: Revoke certificate
+      operationId: revokeCertificate
+      parameters:
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '201':
+          description: Revocation request submitted
+      tags:
+      - Order
+  /order/certificate/{orderId}/note:
+    get:
+      summary: Get order notes
+      operationId: getOrderNotes
+      parameters:
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+      tags:
+      - Order
+    post:
+      summary: Add note to order
+      operationId: addOrderNote
+      parameters:
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '201':
+          description: Note created
+      tags:
+      - Order
+components:
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+    Offset:
+      name: offset
+      in: query
+      schema:
+        type: integer
+  schemas:
+    Order:
+      type: object
+      additionalProperties: true
+    Collection:
+      type: object
+      additionalProperties: true
+      properties:
+        page:
+          type: object
+          additionalProperties: true
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-DC-DEVKEY
+x-generated-from: https://dev.digicert.com/en/certcentral-apis/services-api.html
+x-generated-by: claude-crawl-2026-05-08

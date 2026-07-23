@@ -1,0 +1,44 @@
+openapi: 3.1.0
+info:
+  title: DigiCert CertCentral Services Account User API
+  description: DigiCert CertCentral Services API provides programmatic access to certificate lifecycle operations including ordering, validation, revocation, and management of accounts, domains, and organizations.
+  version: '2'
+servers:
+- url: https://www.digicert.com/services/v2
+  description: DigiCert CertCentral Services API (US)
+- url: https://certcentral.digicert.eu/services/v2
+  description: DigiCert CertCentral Services API (EU)
+security:
+- apiKey: []
+tags:
+- name: User
+paths:
+  /user:
+    get:
+      summary: List users
+      operationId: listUsers
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+      tags:
+      - User
+components:
+  schemas:
+    Collection:
+      type: object
+      additionalProperties: true
+      properties:
+        page:
+          type: object
+          additionalProperties: true
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-DC-DEVKEY
+x-generated-from: https://dev.digicert.com/en/certcentral-apis/services-api.html
+x-generated-by: claude-crawl-2026-05-08
