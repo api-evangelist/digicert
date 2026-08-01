@@ -1,0 +1,22 @@
+{
+  "provider": "digicert",
+  "sources": [
+    "digicert-account-api-openapi.yml",
+    "digicert-domain-api-openapi.yml",
+    "digicert-order-api-openapi.yml",
+    "digicert-organization-api-openapi.yml",
+    "digicert-user-api-openapi.yml"
+  ],
+  "outputs": [
+    "digicert-account-api-openapi.yml",
+    "digicert-domain-api-openapi.yml",
+    "digicert-order-api-openapi.yml",
+    "digicert-organization-api-openapi.yml",
+    "digicert-user-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

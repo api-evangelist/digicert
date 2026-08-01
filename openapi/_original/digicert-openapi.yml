@@ -1,0 +1,344 @@
+openapi: 3.1.0
+info:
+  title: DigiCert CertCentral Services API
+  description: >-
+    DigiCert CertCentral Services API provides programmatic access to
+    certificate lifecycle operations including ordering, validation,
+    revocation, and management of accounts, domains, and organizations.
+  version: "2"
+x-generated-from: https://dev.digicert.com/en/certcentral-apis/services-api.html
+x-generated-by: claude-crawl-2026-05-08
+servers:
+  - url: https://www.digicert.com/services/v2
+    description: DigiCert CertCentral Services API (US)
+  - url: https://certcentral.digicert.eu/services/v2
+    description: DigiCert CertCentral Services API (EU)
+security:
+  - apiKey: []
+paths:
+  /account:
+    get:
+      summary: Get account details
+      operationId: getAccount
+      responses:
+        '200':
+          description: Account details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+  /account/authkey:
+    post:
+      summary: Create authentication key
+      operationId: createAuthKey
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthKey'
+      responses:
+        '201':
+          description: Auth key created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthKey'
+  /account/authkey/{id}:
+    delete:
+      summary: Delete authentication key
+      operationId: deleteAuthKey
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Auth key deleted
+  /account/custom-fields:
+    get:
+      summary: List custom fields
+      operationId: listCustomFields
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+    post:
+      summary: Create custom field
+      operationId: createCustomField
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomField'
+      responses:
+        '201':
+          description: Custom field created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomField'
+  /order:
+    get:
+      summary: List orders
+      operationId: listOrders
+      parameters:
+        - $ref: '#/components/parameters/Offset'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+  /order/{orderId}:
+    get:
+      summary: Get order
+      operationId: getOrder
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+  /order/certificate:
+    post:
+      summary: Order certificate
+      description: Submit a certificate order request.
+      operationId: createCertificateOrder
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '201':
+          description: Order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Order'
+  /order/certificate/{orderId}/download:
+    get:
+      summary: Download certificate
+      operationId: downloadCertificate
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Certificate file
+  /order/certificate/{orderId}/revoke:
+    put:
+      summary: Revoke certificate
+      operationId: revokeCertificate
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '201':
+          description: Revocation request submitted
+  /order/certificate/{orderId}/note:
+    get:
+      summary: Get order notes
+      operationId: getOrderNotes
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+    post:
+      summary: Add note to order
+      operationId: addOrderNote
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        '201':
+          description: Note created
+  /domain:
+    get:
+      summary: List domains
+      operationId: listDomains
+      parameters:
+        - $ref: '#/components/parameters/Offset'
+        - $ref: '#/components/parameters/Limit'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+    post:
+      summary: Add domain
+      operationId: createDomain
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Domain'
+      responses:
+        '201':
+          description: Domain created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Domain'
+  /domain/{domainId}:
+    get:
+      summary: Get domain
+      operationId: getDomain
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Domain'
+    delete:
+      summary: Delete domain
+      operationId: deleteDomain
+      parameters:
+        - name: domainId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Domain deleted
+  /organization:
+    get:
+      summary: List organizations
+      operationId: listOrganizations
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+    post:
+      summary: Create organization
+      operationId: createOrganization
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Organization'
+      responses:
+        '201':
+          description: Organization created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organization'
+  /user:
+    get:
+      summary: List users
+      operationId: listUsers
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-DC-DEVKEY
+  parameters:
+    Offset:
+      name: offset
+      in: query
+      schema:
+        type: integer
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+  schemas:
+    Account:
+      type: object
+      additionalProperties: true
+    AuthKey:
+      type: object
+      additionalProperties: true
+    CustomField:
+      type: object
+      additionalProperties: true
+    Order:
+      type: object
+      additionalProperties: true
+    Domain:
+      type: object
+      additionalProperties: true
+    Organization:
+      type: object
+      additionalProperties: true
+    Collection:
+      type: object
+      additionalProperties: true
+      properties:
+        page:
+          type: object
+          additionalProperties: true
