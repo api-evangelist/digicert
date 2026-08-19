@@ -1,0 +1,27 @@
+# DigiCert developer portal
+> DigiCert developer documentation resources
+> Last updated: 2026-08-13
+
+## About this site
+This site documents DigiCert's REST APIs for certificate lifecycle management, code signing, document signing, IoT device security, and account management. All APIs use HTTPS and authenticate via API keys or OAuth tokens. Base URLs vary by product and are documented in each API section.
+
+## Account and platform
+- [Get started](https://dev.digicert.com/md/get-started.md): Learn the basics of DigiCert APIs and developer integration.
+- [Account Manager API](https://dev.digicert.com/md/account-manager-api.md): Manage accounts, divisions, users, and organization settings.
+- [DigiCert Account API](https://dev.digicert.com/md/digicert-account-api.md): Integrate authentication and single sign-on.
+## Certificates and PKI
+- [DigiCert Public CA API (CertCentral)](https://dev.digicert.com/md/certcentral-apis.md): Public certificate ordering, issuance, renewal, and revocation.
+- [Trust Lifecycle API](https://dev.digicert.com/md/trust-lifecycle-api.md): Automate PKI operations including certificate discovery and lifecycle management.
+- [DigiCert Private CA API](https://dev.digicert.com/md/digicert-private-ca-api.md): Manage private CA hierarchies, certificate profiles, and X.509 certificate issuance.
+## Signing
+- [Software Trust API](https://dev.digicert.com/md/software-trust-api.md): Manage code signing keypairs and automate signing workflows.
+- [Content Trust API](https://dev.digicert.com/md/content-trust-api.md): Content provenance through C2PA-based media authenticity and secure document signing.
+## Devices and IoT
+- [Device Trust API](https://dev.digicert.com/md/device-trust-api.md): IoT device provisioning, certificate enrollment, firmware updates, and lifecycle management.
+- [IoT Trust API](https://dev.digicert.com/md/iot-trust-manager-api.md): Automate IoT credential provisioning and device authentication.
+- [TrustEdge](https://dev.digicert.com/md/trustedge.md): Open-source IoT device security agent.
+- [TrustCore SDK](https://dev.digicert.com/md/trustcore-sdk.md): Complete cryptographic suite for connected devices.
+## Other resources
+- [Partner Subscriptions](https://dev.digicert.com/md/partner-subscriptions-api.md): Manage accounts, API keys, ACME contracts, reporting, and billing links.
+## Comprehensive index
+- [llms-full.txt](https://dev.digicert.com/llms-full.txt): Comprehensive documentation index with all pages and API endpoint details.

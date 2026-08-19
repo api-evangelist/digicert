@@ -1,0 +1,96 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "DigiCert CertCentral Services Account API",
+    "version": "2"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-DC-DEVKEY",
+      "value": "{{X-DC-DEVKEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get account details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.digicert.com/services/v2/account"
+          },
+          "docs": "Get account details"
+        },
+        {
+          "info": {
+            "name": "Create authentication key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.digicert.com/services/v2/account/authkey",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create authentication key"
+        },
+        {
+          "info": {
+            "name": "Delete authentication key",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://www.digicert.com/services/v2/account/authkey/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete authentication key"
+        },
+        {
+          "info": {
+            "name": "List custom fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://www.digicert.com/services/v2/account/custom-fields"
+          },
+          "docs": "List custom fields"
+        },
+        {
+          "info": {
+            "name": "Create custom field",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.digicert.com/services/v2/account/custom-fields",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create custom field"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
