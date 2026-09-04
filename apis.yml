@@ -149,11 +149,12 @@ accessModel:
   try_now: true
   public: false
   label: Freemium · Self-serve signup
-  confidence: high
+  confidence: medium
   source:
   - plans
   - authentication
-  generated: '2026-07-22'
+  - security
+  generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/digicert.png
 access: 3rd-Party
@@ -208,7 +209,7 @@ common:
   url: https://dev.digicert.com/llms.txt
 created: '2025-01-08'
 modified: '2026-05-19'
-position: Consumer
+position: Consuming
 description: >-
   Digicert is a leading provider of digital security solutions, specializing in SSL/TLS certificates, PKI solutions, and
   website security. They help organizations of all sizes protect their websites, data, and communications from cyber
