@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: DigiCert CertCentral Services Account API
   description: DigiCert CertCentral Services API provides programmatic access to certificate lifecycle operations including ordering, validation, revocation, and management of accounts, domains, and organizations.
@@ -93,9 +93,6 @@ paths:
       - Account
 components:
   schemas:
-    AuthKey:
-      type: object
-      additionalProperties: true
     Collection:
       type: object
       additionalProperties: true
@@ -104,6 +101,9 @@ components:
           type: object
           additionalProperties: true
     Account:
+      type: object
+      additionalProperties: true
+    AuthKey:
       type: object
       additionalProperties: true
     CustomField:

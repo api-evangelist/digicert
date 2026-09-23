@@ -1,11 +1,7 @@
 {
   "provider": "digicert",
   "sources": [
-    "digicert-account-api-openapi.yml",
-    "digicert-domain-api-openapi.yml",
-    "digicert-order-api-openapi.yml",
-    "digicert-organization-api-openapi.yml",
-    "digicert-user-api-openapi.yml"
+    "_ae-authored/digicert-openapi.yml"
   ],
   "outputs": [
     "digicert-account-api-openapi.yml",
@@ -17,6 +13,40 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "digicert-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "digicert-openapi.yml: tagged paths GET /account -> Account",
+    "digicert-openapi.yml: tagged paths POST /account/authkey -> Account",
+    "digicert-openapi.yml: tagged paths DELETE /account/authkey/{id} -> Account",
+    "digicert-openapi.yml: tagged paths GET /account/custom-fields -> Account",
+    "digicert-openapi.yml: tagged paths POST /account/custom-fields -> Account",
+    "digicert-openapi.yml: tagged paths GET /order -> Order",
+    "digicert-openapi.yml: tagged paths GET /order/{orderId} -> Order",
+    "digicert-openapi.yml: tagged paths POST /order/certificate -> Order",
+    "digicert-openapi.yml: tagged paths GET /order/certificate/{orderId}/download -> Order",
+    "digicert-openapi.yml: tagged paths PUT /order/certificate/{orderId}/revoke -> Order",
+    "digicert-openapi.yml: tagged paths GET /order/certificate/{orderId}/note -> Order",
+    "digicert-openapi.yml: tagged paths POST /order/certificate/{orderId}/note -> Order",
+    "digicert-openapi.yml: tagged paths GET /domain -> Domain",
+    "digicert-openapi.yml: tagged paths POST /domain -> Domain",
+    "digicert-openapi.yml: tagged paths GET /domain/{domainId} -> Domain",
+    "digicert-openapi.yml: tagged paths DELETE /domain/{domainId} -> Domain",
+    "digicert-openapi.yml: tagged paths GET /organization -> Organization",
+    "digicert-openapi.yml: tagged paths POST /organization -> Organization",
+    "digicert-openapi.yml: tagged paths GET /user -> User",
+    "digicert-openapi.yml: declared missing tag: Account",
+    "digicert-openapi.yml: declared missing tag: Domain",
+    "digicert-openapi.yml: declared missing tag: Order",
+    "digicert-openapi.yml: declared missing tag: Organization",
+    "digicert-openapi.yml: declared missing tag: User",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "digicert-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "digicert-domain-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "digicert-order-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "digicert-organization-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "digicert-user-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
