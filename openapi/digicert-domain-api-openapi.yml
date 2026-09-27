@@ -81,17 +81,6 @@ paths:
       tags:
       - Domain
 components:
-  schemas:
-    Collection:
-      type: object
-      additionalProperties: true
-      properties:
-        page:
-          type: object
-          additionalProperties: true
-    Domain:
-      type: object
-      additionalProperties: true
   parameters:
     Offset:
       name: offset
@@ -103,6 +92,17 @@ components:
       in: query
       schema:
         type: integer
+  schemas:
+    Collection:
+      type: object
+      additionalProperties: true
+      properties:
+        page:
+          type: object
+          additionalProperties: true
+    Domain:
+      type: object
+      additionalProperties: true
   securitySchemes:
     apiKey:
       type: apiKey

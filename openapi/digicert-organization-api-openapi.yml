@@ -46,6 +46,9 @@ paths:
       - Organization
 components:
   schemas:
+    Organization:
+      type: object
+      additionalProperties: true
     Collection:
       type: object
       additionalProperties: true
@@ -53,9 +56,6 @@ components:
         page:
           type: object
           additionalProperties: true
-    Organization:
-      type: object
-      additionalProperties: true
   securitySchemes:
     apiKey:
       type: apiKey
