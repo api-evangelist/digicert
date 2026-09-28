@@ -16,56 +16,94 @@ deployment:
 tools_count: 26
 tools:
 - name: get_certificate
-  description: ''
+  description: Retrieve a DigiCert Private CA certificate by ID using the DigiCert API key from the current
+    MCP request x-api-key header.
 - name: list_certificates
-  description: ''
+  description: List DigiCert Private CA certificates associated with an issuer using exactly one of serial_number,
+    subject_key_id, or subject_public_key. Only offset, limit, and sort are supported in addition to that
+    selector; do not pass status or any ot
 - name: list_certificate_authorities
-  description: ''
+  description: List DigiCert Private certificate authorities the caller has access to. Returns the raw
+    DigiCert API response using the DigiCert API key from the current MCP request x-api-key header.
 - name: get_certificate_authority
-  description: ''
+  description: Retrieve a DigiCert Private certificate authority by CA ID and return the raw DigiCert
+    API response using the DigiCert API key from the current MCP request x-api-key header.
 - name: get_certificate_authority_status
-  description: ''
+  description: Retrieve the active status for a DigiCert Private certificate authority by CA ID and return
+    the raw DigiCert API response using the DigiCert API key from the current MCP request x-api-key header.
 - name: get_certificate_authority_hierarchy
-  description: ''
+  description: Retrieve the root hierarchy for a DigiCert Private certificate authority by CA ID and return
+    the raw DigiCert API response using the DigiCert API key from the current MCP request x-api-key header.
 - name: get_certificate_authority_csr
-  description: ''
+  description: Retrieve the certificate signing request for a DigiCert Private certificate authority by
+    CA ID and return the raw DigiCert API response using the DigiCert API key from the current MCP request
+    x-api-key header.
 - name: get_certificate_authority_cert_policies_issuance
-  description: ''
+  description: Retrieve the certificate policies issuance configuration for a DigiCert Private certificate
+    authority by CA ID and return the raw DigiCert API response using the DigiCert API key from the current
+    MCP request x-api-key header.
 - name: get_certificate_authority_aia_issuer_issuance
-  description: ''
+  description: Retrieve the AIA issuer issuance configuration for a DigiCert Private certificate authority
+    by CA ID and return the raw DigiCert API response using the DigiCert API key from the current MCP
+    request x-api-key header.
 - name: get_certificate_authority_chain_configuration
-  description: ''
+  description: Retrieve the certificate chain configuration for a DigiCert Private certificate authority
+    by CA ID and return the raw DigiCert API response using the DigiCert API key from the current MCP
+    request x-api-key header.
 - name: get_certificate_authority_crl_issuance_configuration
-  description: ''
+  description: Retrieve the CRL issuance configuration for a DigiCert Private certificate authority by
+    CA ID and return the raw DigiCert API response using the DigiCert API key from the current MCP request
+    x-api-key header.
 - name: get_certificate_authority_ocsp_configuration
-  description: ''
+  description: Retrieve the OCSP configuration for a DigiCert Private certificate authority by CA ID and
+    return the raw DigiCert API response using the DigiCert API key from the current MCP request x-api-key
+    header.
 - name: list_ocsp_responders
-  description: ''
+  description: List DigiCert OCSP responders with optional pagination. Returns the raw DigiCert API response
+    using the DigiCert API key from the current MCP request x-api-key header.
 - name: get_ocsp_responder
-  description: ''
+  description: Retrieve a DigiCert OCSP responder by responder ID and return the raw DigiCert API response
+    using the DigiCert API key from the current MCP request x-api-key header.
 - name: list_aia_issuer_files
-  description: ''
+  description: List DigiCert AIA issuer files with optional pagination. Returns the raw DigiCert API response
+    using the DigiCert API key from the current MCP request x-api-key header.
 - name: list_crl_infos
-  description: ''
+  description: List DigiCert CRL information records with optional pagination. Returns the raw DigiCert
+    API response using the DigiCert API key from the current MCP request x-api-key header.
 - name: get_crl_info
-  description: ''
+  description: Retrieve a DigiCert CRL information record by CRL ID and return the raw DigiCert API response
+    using the DigiCert API key from the current MCP request x-api-key header.
 - name: get_certificate_expiration
-  description: ''
+  description: Retrieve the DigiCert certificate expiration value and return the integer response using
+    the DigiCert API key from the current MCP request x-api-key header.
 - name: list_certificate_authority_notes
-  description: ''
+  description: List notes for a DigiCert Private certificate authority by CA ID with optional pagination.
+    Returns the raw DigiCert API response using the DigiCert API key from the current MCP request x-api-key
+    header.
 - name: list_certificate_templates
-  description: ''
+  description: List DigiCert certificate templates with optional pagination and name filtering. Returns
+    the raw DigiCert API response using the DigiCert API key from the current MCP request x-api-key header.
 - name: get_certificate_template
-  description: ''
+  description: Retrieve a DigiCert certificate template by template ID and return the raw DigiCert API
+    response using the DigiCert API key from the current MCP request x-api-key header.
 - name: list_discovered_certificates
-  description: ''
+  description: Use this tool for broad certificate discovery requests, including listing all certificates,
+    listing certificates filtered only by certificate type, and applying MCP-side constraints on certificate
+    fields such as validity.valid_from, validit
 - name: download_certificates_csv
-  description: ''
+  description: Download the DigiCert Private CA certificate list as CSV text with optional pagination
+    and certificate type filtering. Authentication uses the DigiCert API key from the current MCP request
+    x-api-key header.
 - name: list_audit_logs
-  description: ''
+  description: List DigiCert Private CA audit log entries with optional pagination. Returns the raw DigiCert
+    API response using the DigiCert API key from the current MCP request x-api-key header.
 - name: get_certificate_template_accounts
-  description: ''
+  description: Retrieve the accounts assigned to a DigiCert certificate template by template ID and return
+    the raw DigiCert API response using the DigiCert API key from the current MCP request x-api-key header.
 - name: get_certificate_template_schema
-  description: ''
+  description: Retrieve the DigiCert certificate template validation schema and return the raw DigiCert
+    API response using the DigiCert API key from the current MCP request x-api-key header.
 tools_source: live tools/list via initialize handshake, 2026-09-11 (signals/audit_mcp_authorship.py --probe)
 authorship: provider
+descriptions_source: live tools/list (authorship probe or saved capture); filled by backfill-tools-from-authorship.py
+  --descriptions, 2026-09-28
