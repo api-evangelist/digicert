@@ -159,6 +159,9 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/digicert.png
 access: 3rd-Party
 common:
+- type: CapabilityMap
+  url: capabilities/digicert-capability-edges.yml
+  name: Digicert Business Capability Map
 - type: AgenticAccess
   url: agentic-access/digicert-agentic-access.yml
 - type: DomainSecurity

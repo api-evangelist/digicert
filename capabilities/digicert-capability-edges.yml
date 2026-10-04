@@ -1,0 +1,26 @@
+slug: digicert
+provider: Digicert
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Order
+  spec_file: digicert-order-api-openapi.yml
+  capability_id: BC-620
+  capability_id_l1: BC-620
+  capability_name: Cybersecurity Management
+  confidence: 0.7
+  evidence: POST /order/certificate  Order certificate; PUT /order/certificate/{orderId}/revoke  Revoke
+    certificate
+  reason: Issuance, download and revocation of SSL/TLS certificates — digital certificate lifecycle, a
+    cybersecurity capability. These are certificate orders, not procurement purchase orders. No candidate
+    L2 maps to PKI specifically, so L1 only.
