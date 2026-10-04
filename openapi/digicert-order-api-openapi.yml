@@ -146,18 +146,10 @@ paths:
       tags:
       - Order
 components:
-  parameters:
-    Offset:
-      name: offset
-      in: query
-      schema:
-        type: integer
-    Limit:
-      name: limit
-      in: query
-      schema:
-        type: integer
   schemas:
+    Order:
+      type: object
+      additionalProperties: true
     Collection:
       type: object
       additionalProperties: true
@@ -165,9 +157,17 @@ components:
         page:
           type: object
           additionalProperties: true
-    Order:
-      type: object
-      additionalProperties: true
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
+    Offset:
+      name: offset
+      in: query
+      schema:
+        type: integer
   securitySchemes:
     apiKey:
       type: apiKey

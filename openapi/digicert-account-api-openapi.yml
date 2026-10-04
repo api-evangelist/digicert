@@ -93,7 +93,10 @@ paths:
       - Account
 components:
   schemas:
-    CustomField:
+    Account:
+      type: object
+      additionalProperties: true
+    AuthKey:
       type: object
       additionalProperties: true
     Collection:
@@ -103,10 +106,7 @@ components:
         page:
           type: object
           additionalProperties: true
-    Account:
-      type: object
-      additionalProperties: true
-    AuthKey:
+    CustomField:
       type: object
       additionalProperties: true
   securitySchemes:
