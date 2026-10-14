@@ -3,6 +3,8 @@ method: searched
 checked:
 - https://aws.amazon.com/marketplace/
 - https://azuremarketplace.microsoft.com/
+- https://ec.europa.eu/tools/lotl/eu-lotl.xml
+- https://tsl.belgium.be/tsl-be.xml
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -39,3 +41,41 @@ edges:
   seller_name: DigiCert, Inc.
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
+- partner_name: EU Trusted List (eIDAS)
+  partner: null
+  partner_match: register
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://tsl.belgium.be/tsl-be.xml
+  contract_reference:
+    register: EU List of Trusted Lists (eIDAS qualified trust service providers)
+    spec_file: null
+    role: qualified-trust-service-provider
+    registered_name: DigiCert Europe Belgium B.V.
+    member_state: BE
+    trusted_list: https://tsl.belgium.be/tsl-be.xml
+    services:
+    - QES-certificates
+    - QSeal-certificates
+    - QWAC
+    - qualified-timestamp
+    lotl: https://ec.europa.eu/tools/lotl/eu-lotl.xml
+    matched_domain: quovadisglobal.be
+    detected_by: sweep-legal.py
+    detected: '2026-10-14'
+    other_registrations:
+    - registered_name: DigiCert Europe Netherlands B.V.
+      member_state: NL
+      trusted_list: https://www.rdi.nl/site/binaries/content/assets/site-content/bestanden/current-tsl.xml
+      services:
+      - QES-certificates
+      - QSeal-certificates
+      - QWAC
+      - qualified-timestamp
+  source: eutl
+  detected_by: sweep-legal.py
+  first_seen: '2026-10-14'
+source:
+- https://tsl.belgium.be/tsl-be.xml

@@ -27,3 +27,38 @@
   relationship: distribution-channel
   status: not-a-workflow
   arazzo: null
+- slug: digicert-eu-trusted-list-eidas
+  label: EU Trusted List (eIDAS)
+  partner_name: EU Trusted List (eIDAS)
+  type: contract
+  channel: regulator-register
+  evidence: https://tsl.belgium.be/tsl-be.xml
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: EU List of Trusted Lists (eIDAS qualified trust service providers)
+    spec_file: null
+    role: qualified-trust-service-provider
+    registered_name: DigiCert Europe Belgium B.V.
+    member_state: BE
+    trusted_list: https://tsl.belgium.be/tsl-be.xml
+    services:
+    - QES-certificates
+    - QSeal-certificates
+    - QWAC
+    - qualified-timestamp
+    lotl: https://ec.europa.eu/tools/lotl/eu-lotl.xml
+    matched_domain: quovadisglobal.be
+    detected_by: sweep-legal.py
+    detected: '2026-10-14'
+    other_registrations:
+    - registered_name: DigiCert Europe Netherlands B.V.
+      member_state: NL
+      trusted_list: https://www.rdi.nl/site/binaries/content/assets/site-content/bestanden/current-tsl.xml
+      services:
+      - QES-certificates
+      - QSeal-certificates
+      - QWAC
+      - qualified-timestamp
+  status: not-a-workflow
+  arazzo: null
