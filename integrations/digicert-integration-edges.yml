@@ -4,6 +4,7 @@ checked:
 - https://aws.amazon.com/marketplace/
 - https://azuremarketplace.microsoft.com/
 - https://ec.europa.eu/tools/lotl/eu-lotl.xml
+- https://github.com/marketplace?type=actions
 - https://tsl.belgium.be/tsl-be.xml
 marketplace_apps: []
 edges:
@@ -77,5 +78,24 @@ edges:
   source: eutl
   detected_by: sweep-legal.py
   first_seen: '2026-10-14'
+- partner_name: GitHub Marketplace (actions)
+  partner: github-actions
+  partner_match: aggregator
+  type: marketplace
+  marketplace: github-actions
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://github.com/marketplace/actions/digicert-binary-signing
+  listing_count: 3
+  apps:
+  - DigiCert Binary Signing
+  - DigiCert® Container Signing Action
+  - GPG signing with Software Trust Manager
+  publisher_name: DigiCert
+  badges:
+  - Verified creator
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
 source:
 - https://tsl.belgium.be/tsl-be.xml
