@@ -3,8 +3,10 @@ method: searched
 checked:
 - https://aws.amazon.com/marketplace/
 - https://azuremarketplace.microsoft.com/
+- https://ddex.net/membership/current-members/
 - https://ec.europa.eu/tools/lotl/eu-lotl.xml
 - https://github.com/marketplace?type=actions
+- https://raw.githubusercontent.com/c2pa-org/conformance-public/main/conforming-products/conforming-products-list.json
 - https://tsl.belgium.be/tsl-be.xml
 marketplace_apps: []
 edges:
@@ -97,5 +99,63 @@ edges:
   - Verified creator
   detected_by: sweep-devtools.py
   detected: '2026-10-14'
+- partner_name: C2PA (Content Credentials conformance programme)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  channel: standard-directory
+  relationship: standard-participant
+  evidence: https://github.com/c2pa-org/conformance-public/blob/main/conforming-products/conforming-products-list.json
+  category: content provenance (Content Credentials) conformance
+  contract_reference:
+    register: C2PA conforming products list (c2pa-org/conformance-public)
+    spec_file: null
+    role: c2pa-conformant-applicant
+    registered_name: DigiCert, Inc.
+    register_id: DigiCert, Inc.
+    product_types:
+    - generatorProduct
+    assurance_levels:
+    - 1
+    spec_versions:
+    - '2.2'
+    media_types:
+    - application/pdf
+    - audio/flac
+    - audio/mp4
+    - audio/mpeg
+    - audio/wav
+    - image/avif
+    - image/gif
+    - image/heic
+    - image/heif
+    - image/jpeg
+    - image/jxl
+    - image/png
+    - image/svg+xml
+    - image/tiff
+    - image/webp
+    - image/x-adobe-dng
+    - video/mp4
+    - video/quicktime
+    - video/x-msvideo
+    products:
+    - product: DigiCert Content Trust Manager
+      record_id: 019bbc4a-03ce-7351-8975-05f48559cb2d
+      conformance_date: '2026-02-18'
+    - product: DigiCert Content Trust Manager
+      record_id: 019e06f7-9772-7af6-a749-43ed1916018c
+      conformance_date: '2026-07-06'
+    - product: DigiCert Content Trust Manager
+      record_id: 019f0370-82e4-7659-8ca4-019684c65b04
+      conformance_date: '2026-08-12'
+    matched_domain: digicert.com
+    matched_by: domain
+    identity: wikidata Q3027764 'DigiCert' P856 https://www.digicert.com/
+    detected_by: sweep-media.py
+    detected: '2026-10-15'
+  detected_by: sweep-media.py
+  first_seen: '2026-10-15'
 source:
 - https://tsl.belgium.be/tsl-be.xml
