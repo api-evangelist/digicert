@@ -96,9 +96,6 @@ components:
     Account:
       type: object
       additionalProperties: true
-    AuthKey:
-      type: object
-      additionalProperties: true
     Collection:
       type: object
       additionalProperties: true
@@ -107,6 +104,9 @@ components:
           type: object
           additionalProperties: true
     CustomField:
+      type: object
+      additionalProperties: true
+    AuthKey:
       type: object
       additionalProperties: true
   securitySchemes:

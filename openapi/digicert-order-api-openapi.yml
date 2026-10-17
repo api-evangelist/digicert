@@ -147,9 +147,6 @@ paths:
       - Order
 components:
   schemas:
-    Order:
-      type: object
-      additionalProperties: true
     Collection:
       type: object
       additionalProperties: true
@@ -157,14 +154,17 @@ components:
         page:
           type: object
           additionalProperties: true
+    Order:
+      type: object
+      additionalProperties: true
   parameters:
-    Limit:
-      name: limit
+    Offset:
+      name: offset
       in: query
       schema:
         type: integer
-    Offset:
-      name: offset
+    Limit:
+      name: limit
       in: query
       schema:
         type: integer
