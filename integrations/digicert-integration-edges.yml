@@ -12,6 +12,7 @@ checked:
 - https://github.com/marketplace?type=actions
 - https://raw.githubusercontent.com/c2pa-org/conformance-public/main/conforming-products/conforming-products-list.json
 - https://tsl.belgium.be/tsl-be.xml
+- slack/integrations/slack-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -242,5 +243,22 @@ edges:
     detected: '2026-10-18'
   detected_by: sweep-pki-encryption.py
   first_seen: '2026-10-18'
+- partner_name: Slack (own)
+  partner: slack
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://slack.com/marketplace/A08KK5WRYV8-digicert-one
+  mirror_of: slack/integrations/slack-integration-edges.yml
+  apps:
+  - DigiCert ONE
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Slack app
 source:
 - https://tsl.belgium.be/tsl-be.xml
