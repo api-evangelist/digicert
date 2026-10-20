@@ -49,42 +49,6 @@ edges:
   seller_name: DigiCert, Inc.
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
-- partner_name: EU Trusted List (eIDAS)
-  partner: null
-  partner_match: register
-  type: contract
-  channel: regulator-register
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://tsl.belgium.be/tsl-be.xml
-  contract_reference:
-    register: EU List of Trusted Lists (eIDAS qualified trust service providers)
-    spec_file: null
-    role: qualified-trust-service-provider
-    registered_name: DigiCert Europe Belgium B.V.
-    member_state: BE
-    trusted_list: https://tsl.belgium.be/tsl-be.xml
-    services:
-    - QES-certificates
-    - QSeal-certificates
-    - QWAC
-    - qualified-timestamp
-    lotl: https://ec.europa.eu/tools/lotl/eu-lotl.xml
-    matched_domain: quovadisglobal.be
-    detected_by: sweep-legal.py
-    detected: '2026-10-14'
-    other_registrations:
-    - registered_name: DigiCert Europe Netherlands B.V.
-      member_state: NL
-      trusted_list: https://www.rdi.nl/site/binaries/content/assets/site-content/bestanden/current-tsl.xml
-      services:
-      - QES-certificates
-      - QSeal-certificates
-      - QWAC
-      - qualified-timestamp
-  source: eutl
-  detected_by: sweep-legal.py
-  first_seen: '2026-10-14'
 - partner_name: GitHub Marketplace (actions)
   partner: github-actions
   partner_match: aggregator
@@ -104,64 +68,6 @@ edges:
   - Verified creator
   detected_by: sweep-devtools.py
   detected: '2026-10-14'
-- partner_name: C2PA (Content Credentials conformance programme)
-  partner: null
-  partner_match: register
-  type: register
-  direction: partner-built
-  channel: standard-directory
-  relationship: standard-participant
-  evidence: https://github.com/c2pa-org/conformance-public/blob/main/conforming-products/conforming-products-list.json
-  category: content provenance (Content Credentials) conformance
-  contract_reference:
-    register: C2PA conforming products list (c2pa-org/conformance-public)
-    spec_file: null
-    role: c2pa-conformant-applicant
-    registered_name: DigiCert, Inc.
-    register_id: DigiCert, Inc.
-    product_types:
-    - generatorProduct
-    assurance_levels:
-    - 1
-    spec_versions:
-    - '2.2'
-    media_types:
-    - application/pdf
-    - audio/flac
-    - audio/mp4
-    - audio/mpeg
-    - audio/wav
-    - image/avif
-    - image/gif
-    - image/heic
-    - image/heif
-    - image/jpeg
-    - image/jxl
-    - image/png
-    - image/svg+xml
-    - image/tiff
-    - image/webp
-    - image/x-adobe-dng
-    - video/mp4
-    - video/quicktime
-    - video/x-msvideo
-    products:
-    - product: DigiCert Content Trust Manager
-      record_id: 019bbc4a-03ce-7351-8975-05f48559cb2d
-      conformance_date: '2026-02-18'
-    - product: DigiCert Content Trust Manager
-      record_id: 019e06f7-9772-7af6-a749-43ed1916018c
-      conformance_date: '2026-07-06'
-    - product: DigiCert Content Trust Manager
-      record_id: 019f0370-82e4-7659-8ca4-019684c65b04
-      conformance_date: '2026-08-12'
-    matched_domain: digicert.com
-    matched_by: domain
-    identity: wikidata Q3027764 'DigiCert' P856 https://www.digicert.com/
-    detected_by: sweep-media.py
-    detected: '2026-10-15'
-  detected_by: sweep-media.py
-  first_seen: '2026-10-15'
 - partner_name: CCADB root programs (Apple, Chrome, Microsoft, Mozilla)
   partner: null
   partner_match: register
@@ -260,5 +166,101 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: Slack app
+- partner_name: EU Trusted List (eIDAS)
+  partner: null
+  partner_match: register
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://tsl.belgium.be/tsl-be.xml
+  contract_reference:
+    register: EU List of Trusted Lists (eIDAS qualified trust service providers)
+    spec_file: null
+    role: qualified-trust-service-provider
+    registered_name: DigiCert Europe Belgium B.V.
+    member_state: BE
+    trusted_list: https://tsl.belgium.be/tsl-be.xml
+    services:
+    - QES-certificates
+    - QSeal-certificates
+    - QWAC
+    - qualified-timestamp
+    lotl: https://ec.europa.eu/tools/lotl/eu-lotl.xml
+    matched_domain: quovadisglobal.be
+    detected_by: sweep-legal.py
+    detected: '2026-10-19'
+    other_registrations:
+    - registered_name: DigiCert Europe Netherlands B.V.
+      member_state: NL
+      trusted_list: https://www.rdi.nl/site/binaries/content/assets/site-content/bestanden/current-tsl.xml
+      services:
+      - QES-certificates
+      - QSeal-certificates
+      - QWAC
+      - qualified-timestamp
+  source: eutl
+  detected_by: sweep-legal.py
+  first_seen: '2026-10-19'
+- partner_name: C2PA (Content Credentials conformance programme)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  channel: standard-directory
+  relationship: standard-participant
+  evidence: https://github.com/c2pa-org/conformance-public/blob/main/conforming-products/conforming-products-list.json
+  category: content provenance (Content Credentials) conformance
+  contract_reference:
+    register: C2PA conforming products list (c2pa-org/conformance-public)
+    spec_file: null
+    role: c2pa-conformant-applicant
+    registered_name: DigiCert, Inc.
+    register_id: DigiCert, Inc.
+    product_types:
+    - generatorProduct
+    assurance_levels:
+    - 1
+    spec_versions:
+    - '2.2'
+    media_types:
+    - application/pdf
+    - audio/flac
+    - audio/mp4
+    - audio/mpeg
+    - audio/wav
+    - image/avif
+    - image/gif
+    - image/heic
+    - image/heif
+    - image/jpeg
+    - image/jxl
+    - image/png
+    - image/svg+xml
+    - image/tiff
+    - image/webp
+    - image/x-adobe-dng
+    - video/mp4
+    - video/quicktime
+    - video/x-msvideo
+    products:
+    - product: DigiCert Content Trust Manager
+      record_id: 019bbc4a-03ce-7351-8975-05f48559cb2d
+      conformance_date: '2026-02-18'
+    - product: DigiCert Content Trust Manager
+      record_id: 019e06f7-9772-7af6-a749-43ed1916018c
+      conformance_date: '2026-07-06'
+    - product: DigiCert Content Trust Manager
+      record_id: 019f0370-82e4-7659-8ca4-019684c65b04
+      conformance_date: '2026-08-12'
+    matched_domain: digicert.com
+    matched_by: domain
+    identity: wikidata Q3027764 'DigiCert' P856 https://www.digicert.com/
+    detected_by: sweep-media.py
+    detected: '2026-10-19'
+  detected_by: sweep-media.py
+  first_seen: '2026-10-15'
 source:
+- https://tsl.belgium.be/tsl-be.xml
+- https://tsl.belgium.be/tsl-be.xml
 - https://tsl.belgium.be/tsl-be.xml
