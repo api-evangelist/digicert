@@ -21,7 +21,8 @@ tools:
 - name: list_certificates
   description: List DigiCert Private CA certificates associated with an issuer using exactly one of serial_number,
     subject_key_id, or subject_public_key. Only offset, limit, and sort are supported in addition to that
-    selector; do not pass status or any ot
+    selector; do not pass status or any other unsupported query fields. Authentication uses the DigiCert
+    API key from the current MCP request x-api-key header.
 - name: list_certificate_authorities
   description: List DigiCert Private certificate authorities the caller has access to. Returns the raw
     DigiCert API response using the DigiCert API key from the current MCP request x-api-key header.
@@ -89,7 +90,10 @@ tools:
 - name: list_discovered_certificates
   description: Use this tool for broad certificate discovery requests, including listing all certificates,
     listing certificates filtered only by certificate type, and applying MCP-side constraints on certificate
-    fields such as validity.valid_from, validit
+    fields such as validity.valid_from, validity.valid_to, cert_type, trust_type, hosted_type, csr_type,
+    revocation.revoked, revocation.reason, revocation.revoke_date, subject.common_name, or issuer.id.
+    When limit is omitted, the MCP server fetches all discovery pages before returning results. Authentication
+    uses the DigiCert API key from the current MCP request x-api-key header.
 - name: download_certificates_csv
   description: Download the DigiCert Private CA certificate list as CSV text with optional pagination
     and certificate type filtering. Authentication uses the DigiCert API key from the current MCP request
