@@ -14,6 +14,11 @@ checked:
 - https://tsl.belgium.be/tsl-be.xml
 - slack/integrations/slack-integration-edges.yml
 - terraform/integrations/terraform-integration-edges.yml
+- https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls
+- https://helpx.adobe.com/acrobat/kb/approved-trust-list1.html
+- https://helpx.adobe.com/acrobat/kb/approved-trust-list2.html
+- https://pdfa.org/members/
+- https://verapdf.org/
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -280,5 +285,37 @@ edges:
   category: infrastructure-as-code provider registry listing
   badges:
   - Verified publisher (GitHub domain-verified organization)
+- partner_name: Adobe Approved Trust List (AATL)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://helpx.adobe.com/acrobat/kb/approved-trust-list1.html
+  category: PDF document-signing trust list
+  contract_reference:
+    register: Adobe Approved Trust List members (helpx.adobe.com/acrobat/kb/approved-trust-list1.html)
+    standard: Adobe Approved Trust List
+    spec_file: null
+    role: aatl-member
+    registered_name: DigiCert
+    register_country: US
+    register_id: https://www.digicert.com/
+    matched_domain: digicert.com
+    matched_by: domain
+    certified_products:
+    - product: AATL trusted document-signing root
+      product_type: AATL member
+      lapsed: false
+    signal_note: 'certified_products = ONE entry: Adobe verified the member against the AATL Technical Requirements
+      and ships its root in the signed trust list Acrobat / Reader download; never per root or per credential; the
+      CSC TSP mark is a self-declared commitment, a badge only'
+    detected_by: sweep-pdf-document-standards.py
+    detected: '2026-10-21'
+  detected_by: sweep-pdf-document-standards.py
+  first_seen: '2026-10-21'
+  badges:
+  - csc_tsp_commitment
 source:
 - https://tsl.belgium.be/tsl-be.xml
