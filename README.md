@@ -1,4 +1,4 @@
-# Digicert (digicert)
+# Digicert
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,144 +66,148 @@
 
 Digicert is a leading provider of digital security solutions, specializing in SSL/TLS certificates, PKI solutions, and website security. They help organizations of all sizes protect their websites, data, and communications from cyber threats by providing secure encryption and authentication services. Digicert's CertCentral platform exposes a suite of REST and GraphQL APIs for certificate lifecycle management, discovery, automation, and reporting.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/digicert/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/digicert/refs/heads/main/apis.yml)
+**Areas:** Certificates · Encryption · PKI · SSL · TLS
 
-## Scope
+## Digicert on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Digicert is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/digicert/](https://apis.io/providers/digicert/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (9)
 
-- Certificates
-- Encryption
-- PKI
-- SSL
-- TLS
+- [DigiCert Report Library API](https://apis.io/apis/digicert/digicert-report-library-api/) — The DigiCert Report Library API allows users to create and manage custom reports for CertCentral certificate orders, domains, organizations, and account…
+- [DigiCert Discovery API](https://apis.io/apis/digicert/digicert-discovery-api/) — The DigiCert Discovery API enables scanning of internal and public-facing networks using sensors to find SSL/TLS certificates regardless of the issuing…
+- [DigiCert Automation API](https://apis.io/apis/digicert/digicert-automation-api/) — The DigiCert Automation API allows configuration of automation profiles and management of automation activities for certificate lifecycle operations. Access…
+- [DigiCert Custom Reports API](https://apis.io/apis/digicert/digicert-custom-reports-api/) — The DigiCert Custom Reports API allows generation of customizable and comprehensive data sets by leveraging the powerful GraphQL query language. Build…
+- [Digicert Account API](https://apis.io/apis/digicert/digicert-account-api/) — The Account API from Digicert — 4 operation(s) for account.
+- [Digicert Domain API](https://apis.io/apis/digicert/digicert-domain-api/) — The Domain API from Digicert — 2 operation(s) for domain.
+- [Digicert Order API](https://apis.io/apis/digicert/digicert-order-api/) — The Order API from Digicert — 6 operation(s) for order.
+- [Digicert Organization API](https://apis.io/apis/digicert/digicert-organization-api/) — The Organization API from Digicert — 1 operation(s) for organization.
+- [Digicert User API](https://apis.io/apis/digicert/digicert-user-api/) — The User API from Digicert — 1 operation(s) for user.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-01-08
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### GraphQL (1)
 
-### DigiCert Services API
+GraphQL schemas.
 
-The DigiCert Services API automates certificate processes to save time and streamline certificate management across the CertCentral platform. Use this API to manage all aspects of your CertCentral account including order, issue, reissue, renew, and revoke for SSL/TLS, code signing, client, and document signing certificates, as well as user, organization, domain, and product management.
+- [Digicert GraphQL API](https://apis.io/graphqls/digicert/digicert-graphql/)
 
-- **Human URL:** [https://dev.digicert.com/en/certcentral-apis/services-api.html](https://dev.digicert.com/en/certcentral-apis/services-api.html)
-- **Base URL:** `https://www.digicert.com/services/v2`
+#### MCP servers (1)
 
-#### Tags
+Model Context Protocol servers that expose the API to agents.
 
-- Certificates
-- Encryption
-- PKI
-- SSL
-- TLS
+- [digicert](https://apis.io/servers/digicert/digicert/)
 
-#### Properties
+#### Agentic access (1)
 
-- [Documentation](https://dev.digicert.com/en/certcentral-apis/services-api.html)
-- [OpenAPI](openapi/digicert-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/digicert.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/digicert.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-### DigiCert Report Library API
+- [Digicert Agentic Access](https://apis.io/agentic-access/digicert/digicert-agentic-access/)
 
-The DigiCert Report Library API allows users to create and manage custom reports for CertCentral certificate orders, domains, organizations, and account activity. Programmatically schedule, retrieve, and export reports to streamline visibility and auditing of certificate inventories.
+#### Collections (6)
 
-- **Human URL:** [https://dev.digicert.com/en/certcentral-apis/report-library-api.html](https://dev.digicert.com/en/certcentral-apis/report-library-api.html)
+Postman and Open Collection request collections.
 
-#### Tags
+- [DigiCert CertCentral Services API](https://apis.io/collections/digicert/open-digicert/)
+- [DigiCert CertCentral Services Account API](https://apis.io/collections/digicert/open-digicert-account-api/)
+- [DigiCert CertCentral Services Account Domain API](https://apis.io/collections/digicert/open-digicert-domain-api/)
+- [DigiCert CertCentral Services Account Order API](https://apis.io/collections/digicert/open-digicert-order-api/)
+- [DigiCert CertCentral Services Account Organization API](https://apis.io/collections/digicert/open-digicert-organization-api/)
+- [DigiCert CertCentral Services Account User API](https://apis.io/collections/digicert/open-digicert-user-api/)
 
-- Certificates
-- Encryption
-- Reporting
+#### Security (2)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Documentation](https://dev.digicert.com/en/certcentral-apis/report-library-api.html)
-- [Postman Collection](collections/digicert.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/digicert.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Digicert Authentication](https://apis.io/security/digicert/digicert-authentication/)
+- [Digicert Domain Security](https://apis.io/security/digicert/digicert-domain-security/)
 
-### DigiCert Discovery API
+#### Plans and pricing (1)
 
-The DigiCert Discovery API enables scanning of internal and public-facing networks using sensors to find SSL/TLS certificates regardless of the issuing Certificate Authority. Use the API to manage scan configurations, sensors, divisions, and the certificates that have been discovered to reduce risk from unknown or expired certificates.
+Published plans, tiers and prices.
 
-- **Human URL:** [https://dev.digicert.com/en/certcentral-apis/discovery-api.html](https://dev.digicert.com/en/certcentral-apis/discovery-api.html)
+- [Digicert Plans Pricing](https://apis.io/plans/digicert/digicert-plans-pricing/)
 
-#### Tags
+#### Rate limits (1)
 
-- Certificates
-- Discovery
-- Encryption
-- Scanning
+Published request limits.
 
-#### Properties
+- [Digicert Rate Limits](https://apis.io/rate-limits/digicert/digicert-rate-limits/)
 
-- [Documentation](https://dev.digicert.com/en/certcentral-apis/discovery-api.html)
-- [Postman Collection](collections/digicert.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/digicert.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### FinOps (1)
 
-### DigiCert Automation API
+What the API costs to run, by operation.
 
-The DigiCert Automation API allows configuration of automation profiles and management of automation activities for certificate lifecycle operations. Access all automation features available in CertCentral programmatically without needing to log in to the platform.
+- [Digicert Finops](https://apis.io/finops/digicert/digicert-finops/)
 
-- **Human URL:** [https://dev.digicert.com/en/certcentral-apis/automation-api.html](https://dev.digicert.com/en/certcentral-apis/automation-api.html)
+## Where to find this API
 
-#### Tags
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- Automation
-- Certificates
-- Encryption
-
-#### Properties
-
-- [Documentation](https://dev.digicert.com/en/certcentral-apis/automation-api.html)
-- [Postman Collection](collections/digicert.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/digicert.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### DigiCert Custom Reports API
-
-The DigiCert Custom Reports API allows generation of customizable and comprehensive data sets by leveraging the powerful GraphQL query language. Build tailored reporting against CertCentral data sources with flexible filtering, sorting, and field selection.
-
-- **Human URL:** [https://dev.digicert.com/en/certcentral-apis/custom-reports-api.html](https://dev.digicert.com/en/certcentral-apis/custom-reports-api.html)
-
-#### Tags
-
-- Certificates
-- Encryption
-- GraphQL
-- Reporting
-
-#### Properties
-
-- [Documentation](https://dev.digicert.com/en/certcentral-apis/custom-reports-api.html)
-- [Postman Collection](collections/digicert.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/digicert.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/digicert-inc-)
-- [Developer](https://dev.digicert.com/)
-- [Documentation](https://docs.digicert.com/)
-- [Support](https://knowledge.digicert.com/)
 - [Website](https://www.digicert.com/)
-- [Blog](https://www.digicert.com/blog/)
+- [Documentation](https://docs.digicert.com/)
 - [Pricing](https://www.digicert.com/tls-ssl/compare-certificates)
-- [Security](https://www.digicert.com/trust/)
-- [Status Page](https://status.digicert.com/)
-- [Privacy Policy](https://www.digicert.com/legal-repository/privacy-policy)
-- [Terms of Service](https://www.digicert.com/legal-repository/master-services-agreement)
-- [Git Hub](https://github.com/digicert)
+- [Support](https://knowledge.digicert.com/)
 - [Changelog](https://dev.digicert.com/en/changelog.html)
-- [Integrations](https://www.digicert.com/integrations)
-- [L L Ms Txt](https://dev.digicert.com/llms.txt)
+- [Blog](https://www.digicert.com/blog/)
+- [Security](https://www.digicert.com/trust/)
+- [Terms of service](https://www.digicert.com/legal-repository/master-services-agreement)
+- [Privacy policy](https://www.digicert.com/legal-repository/privacy-policy)
+- [Status](https://status.digicert.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 38.7** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.7 |
+| Contract quality | 42.9 |
+| Contract governance | 0.0 |
+| Operational transparency | 55.3 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 39.5 |
+
+**Agent readiness 28.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 19.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/digicert/](https://apis.io/providers/digicert/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Digicert: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/digicert/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
